@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Pro - Submission Ready</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <!-- Tautan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="header-title">
+                <h1>Bookshelf Pro By Rakasyainz</h1>
+                <p>Kelola koleksi bacaan Anda dengan elegan</p>
+            </div>
+            <button id="theme-switcher" class="theme-switcher-btn" title="Ganti Tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-grid">
+            <!-- Kolom Input -->
+            <div class="input-column">
+                <section class="card" id="inputSection">
+                    <h2 class="section-title">Tambah Buku Baru</h2>
+                    <form id="bookForm" data-testid="bookForm">
+                        <div class="form-group">
+                            <label for="bookFormTitle">Judul Buku</label>
+                            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" placeholder="cth: Laskar Pelangi">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookFormAuthor">Nama Penulis</label>
+                            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" placeholder="cth: Andrea Hirata">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookFormYear">Tahun Terbit</label>
+                            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" placeholder="cth: 2005">
+                        </div>
+                        <div class="form-check">
+                            <input id="bookFormIsComplete" type="checkbox" data-testid="bookFormIsCompleteCheckbox">
+                            <label for="bookFormIsComplete">Selesai dibaca</label>
+                        </div>
+                        <button id="bookFormSubmit" class="btn btn-primary" type="submit" data-testid="bookFormSubmitButton">
+                            <i class="fa-solid fa-plus"></i>
+                            <span id="submitButtonText">Masukkan Buku ke rak "Belum selesai dibaca"</span>
+                        </button>
+                    </form>
+                </section>
+                
+                <section class="card" id="searchSection">
+                    <h2 class="section-title">Cari Buku</h2>
+                    <!-- FORM PENCARIAN SESUAI STARTER -->
+                    <form id="searchBook" data-testid="searchBookForm">
+                        <div class="form-group">
+                            <label for="searchBookTitle">Judul</label>
+                            <div class="search-wrapper">
+                                <input id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" placeholder="Ketik judul buku...">
+                                <button id="searchSubmit" type="submit" class="btn btn-search" data-testid="searchBookFormSubmitButton">
+                                    <i class="fa-solid fa-search"></i>
+                                    <span>Cari</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Kolom Rak Buku -->
+            <div class="shelf-column">
+                <section class="card">
+                    <h2 class="section-title">Belum Selesai Dibaca</h2>
+                    <div id="incompleteBookList" class="book-list" data-testid="incompleteBookList">
+                        <!-- Daftar buku akan muncul di sini -->
+                    </div>
+                </section>
+        
+                <section class="card">
+                    <h2 class="section-title">Selesai Dibaca</h2>
+                    <div id="completeBookList" class="book-list" data-testid="completeBookList">
+                        <!-- Daftar buku akan muncul di sini -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal untuk Konfirmasi Hapus -->
+    <div id="confirmationModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Konfirmasi Tindakan</h3>
+            <p id="modalMessage">Apakah Anda yakin ingin menghapus buku ini dari rak?</p>
+            <div class="modal-actions">
+                <button id="modalCancel" class="btn btn-secondary">Batal</button>
+                <button id="modalConfirm" class="btn btn-danger">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Bookshelf Pro Build By Rakasyainz 2025</p>
+        </div>
+    </footer>
+
+    <!-- Tautan ke file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
